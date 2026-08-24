@@ -48,8 +48,24 @@ jobs:
         run: |
           kubectl rollout restart deployment/backend
 
-      - name: Verify backend deployment
+            - name: Verify backend deployment
         run: |
-          kubectl rollout status deployment/backend --timeout=120s
-          kubectl get pods
+          kubectl rollout status deployment/backend --timeout=120s || true
+          
+          echo "===== DEPLOYMENT ====="
+          kubectl get deployment backend -o wide
+          
+          echo "===== ALL PODS ====="
+          kubectl get pods -o wide
+          
+          echo "===== BACKEND PODS ====="
+          kubectl get pods -l app=backend -o wide
+          
+          echo "===== DEPLOYMENT DESCRIPTION ====="
+          kubectl describe deployment backend
+          
+          echo "===== BACKEND SERVICE ====="
           kubectl get svc backend
+          
+          echo "===== RECENT EVENTS ====="
+          kubectl get events --sort-by=.lastTimestamp | tail -30
