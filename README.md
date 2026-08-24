@@ -465,6 +465,91 @@ kustomize edit set image backend=<ECR_REPO_URL>:<NEW_TAG_HERE>
 # Apply the manifests to the cluster
 kustomize build | kubectl apply -f -
 ```
+# Movie Picture Pipeline
+
+## Project Submission
+
+### Project Repository
+
+The complete Movie Picture Pipeline project is available in the GitHub repository below. The repository contains the application source code, Docker configuration, Kubernetes manifests, Terraform infrastructure setup, and GitHub Actions workflows used for continuous integration and deployment.
+
+[Movie Picture Pipeline - GitHub Repository](https://github.com/SrideviKamini25/cd12354-Movie-Picture-Pipeline)
+
+### Deployed Applications
+
+The application has been deployed on an Amazon EKS cluster. After completing the deployment, I tested both the frontend and backend services to make sure they were working correctly.
+
+**Frontend API**
+
+[Open the Movie Picture Application](http://a559f0104f6564818bdf8c9d2b0ef2e7-2007307731.us-east-1.elb.amazonaws.com)
+
+The frontend application loads the movie list and allows users to select a movie and view its details.
+
+**Backend API**
+
+[Open the Movies API](http://a9d8a58f5c6dd4053ae683394905498d-1296686470.us-east-1.elb.amazonaws.com/movies)
+
+The backend exposes the `/movies` endpoint and returns the available movie information in JSON format.
+
+### CI/CD Workflows
+
+GitHub Actions was used to automate the continuous integration and continuous deployment process for both parts of the application.
+
+The project includes four workflows:
+
+- Backend Continuous Integration
+- Backend Continuous Deployment
+- Frontend Continuous Integration
+- Frontend Continuous Deployment
+
+The CI workflows perform the required code validation and testing. The CD workflows build and publish Docker images to Amazon ECR and deploy the applications to the Kubernetes cluster running on Amazon EKS.
+
+### Deployment Verification
+
+I verified the deployment after the application was running on the EKS cluster.
+
+The following checks were completed:
+
+- Verified that the EKS worker node successfully joined the cluster.
+- Confirmed that the backend pod was running.
+- Confirmed that the frontend pod was running.
+- Tested the backend `/movies` endpoint.
+- Verified that the backend returned the expected movie data.
+- Opened the frontend application and confirmed that the movie list was displayed.
+- Verified that movie details could be accessed from the frontend.
+- Checked the GitHub Actions CI workflows.
+- Checked the GitHub Actions CD workflows.
+- Confirmed that the updated frontend Docker image was built and pushed to Amazon ECR.
+
+The deployment was therefore tested from the infrastructure level through to the application level.
+
+### Screenshots
+
+The following screenshots provide evidence of the deployed application and the CI/CD workflow execution.
+
+#### Backend API
+
+![Backend API](screenshots/backend_api.png)
+
+#### Backend Continuous Deployment
+
+![Backend Continuous Deployment](screenshots/backend_CD.png)
+
+#### Backend Continuous Integration
+
+![Backend Continuous Integration](screenshots/backend_CI.png)
+
+#### Frontend Application
+
+![Frontend Application](screenshots/frontend_api.png)
+
+#### Frontend Continuous Deployment
+
+![Frontend Continuous Deployment](screenshots/frontend_CD.png)
+
+#### Frontend Continuous Integration
+
+![Frontend Continuous Integration](screenshots/frontend_CI.png)
 
 ## License
 
