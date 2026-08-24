@@ -529,27 +529,27 @@ The following screenshots provide evidence of the deployed application and the C
 
 #### Backend API
 
-![Backend API](screenshots/backend_api.png)
+![Backend API](Screenshots/backend_api.png)
 
 #### Backend Continuous Deployment
 
-![Backend Continuous Deployment](screenshots/backend_CD.png)
+![Backend Continuous Deployment](Screenshots/backend_CD.png)
 
 #### Backend Continuous Integration
 
-![Backend Continuous Integration](screenshots/backend_CI.png)
+![Backend Continuous Integration](Screenshots/backend_CI.png)
 
 #### Frontend Application
 
-![Frontend Application](screenshots/frontend_api.png)
+![Frontend Application](Screenshots/frontend_api.png)
 
 #### Frontend Continuous Deployment
 
-![Frontend Continuous Deployment](screenshots/frontend_CD.png)
+![Frontend Continuous Deployment](Screenshots/frontend_CD.png)
 
 #### Frontend Continuous Integration
 
-![Frontend Continuous Integration](screenshots/frontend_CI.png)
+![Frontend Continuous Integration](Screenshots/frontend_CI.png)
 
 ## License
 
